@@ -1,6 +1,7 @@
 # AgileFamily
 
-## Made with Vue.JS + Vuex + Vuetify + Vue-Apollo + GraphQL
+
+### Made with Vue.JS + Vuex + Vuetify + Vue-Apollo + GraphQL
 
 ## Project setup
 ```
