@@ -1,4 +1,6 @@
-# vue-apollo-graphql-boilerplate
+# AgileFamily
+
+## Made with Vue.JS + Vuex + Vuetify + Vue-Apollo + GraphQL
 
 ## Project setup
 ```
