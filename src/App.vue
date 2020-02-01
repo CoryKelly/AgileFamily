@@ -1,56 +1,49 @@
 <template>
   <v-app>
     <v-app-bar app color="primary" dark>
-      <div class="d-flex align-center">
-        <v-img
-          alt="Vuetify Logo"
-          class="shrink mr-2"
-          contain
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
-          transition="scale-transition"
-          width="40"
-        />
-
-        <v-img
-          alt="Vuetify Name"
-          class="shrink mt-1 hidden-sm-and-down"
-          contain
-          min-width="100"
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png"
-          width="100"
-        />
-      </div>
-
+      <router-link to="/" tag="span" style="cursor: pointer;">
+        <v-toolbar-title class="hidden-xs-only"
+          ><strong>Agile</strong>Family</v-toolbar-title
+        >
+      </router-link>
       <v-spacer></v-spacer>
 
       <v-btn
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-        text
-      >
-        <span class="mr-2">Latest Release</span>
-        <v-icon>mdi-open-in-new</v-icon>
+        v-for="item in horizontalNavItems" :key="item.id"
+        class="ma-5 ma-md-10" text icon tile small color="blue-grey">
+        <v-icon color="white" class="hidden-sm-and-down">{{item.icon }}</v-icon>
+        <router-link :to="item.link">
+          <span style="color:white">{{ item.title }}</span>
+        </router-link>
       </v-btn>
     </v-app-bar>
 
     <v-content>
-      <HelloWorld />
+      <v-container>
+        <router-view />
+      </v-container>
     </v-content>
+
+
+
+    <!-- Footer -->
+    <v-footer app color="primary" class="white--text">
+      <span>Made with ❤️ for you!</span>
+      <v-spacer />
+      <span>AgileFamily &copy; 2020</span>
+    </v-footer>
   </v-app>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld";
-
 export default {
   name: "App",
-
-  components: {
-    HelloWorld
-  },
-
-  data: () => ({
-    //
-  })
-};
+  computed: {
+    horizontalNavItems() {
+      return [
+        {id: 1, icon: "mdi-pencil", title: "Add Task", link: "/addTask"}
+      ];
+    }
+  }
+}
 </script>

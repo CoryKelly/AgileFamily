@@ -11,7 +11,7 @@ import VueApollo from "vue-apollo";
 Vue.use(VueApollo);
 
 const httpLink = new HttpLink({
-  uri: "ADD_YOUR_HASURA_END_POINT_HERE"
+  uri: process.env.VUE_APP_GRAPH_ENDPOINT
 });
 
 const apolloClient = new ApolloClient({

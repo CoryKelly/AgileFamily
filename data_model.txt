@@ -1,0 +1,24 @@
+
+- Data Model
+
+  - Users
+    - id: ID
+    - Name: String!
+    - Lead: Boolean
+    - Avatar: String
+    - joinDate: String
+
+
+  - Task
+    - id: ID!
+    - Title: String!
+    - ImageUrl: String!
+    - Description: String
+    - Complete: Boolean
+    - CreateBy: User!
+        - User_id: -> [user] id
+
+ ** ToDo: Add this table to hasura
+  - Category
+    - id: ID!
+    - Title: String!
