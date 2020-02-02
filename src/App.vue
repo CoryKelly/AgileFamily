@@ -9,9 +9,18 @@
       <v-spacer></v-spacer>
 
       <v-btn
-        v-for="item in horizontalNavItems" :key="item.id"
-        class="ma-5 ma-md-10" text icon tile small color="blue-grey">
-        <v-icon color="white" class="hidden-sm-and-down">{{item.icon }}</v-icon>
+        v-for="item in horizontalNavItems"
+        :key="item.id"
+        class="ma-5 ma-md-10"
+        text
+        icon
+        tile
+        small
+        color="blue-grey"
+      >
+        <v-icon color="white" class="hidden-sm-and-down">{{
+          item.icon
+        }}</v-icon>
         <router-link :to="item.link">
           <span style="color:white">{{ item.title }}</span>
         </router-link>
@@ -23,8 +32,6 @@
         <router-view />
       </v-container>
     </v-content>
-
-
 
     <!-- Footer -->
     <v-footer app color="primary" class="white--text">
@@ -41,9 +48,9 @@ export default {
   computed: {
     horizontalNavItems() {
       return [
-        {id: 1, icon: "mdi-pencil", title: "Add Task", link: "/addTask"}
+        { id: 1, icon: "mdi-pencil", title: "Add Task", link: "/addTask" }
       ];
     }
   }
-}
+};
 </script>

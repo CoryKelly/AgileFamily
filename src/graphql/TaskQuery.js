@@ -11,6 +11,7 @@ export const GET_TASK = gql`
       user {
         firstName
         lastName
+        avatar
       }
     }
   }
